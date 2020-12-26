@@ -1,6 +1,6 @@
 ﻿# Yatzy Refactoring Kata
 
-This version of the refactoring Kata belongs to Emily Bache (https://github.com/emilybache/Yatzy-Refactoring-Kata), it is not mine. I just coppied the readme to my own repository so as to check for the rules more easily.
+This version of the refactoring Kata belongs to Emily Bache (https://github.com/emilybache/Yatzy-Refactoring-Kata), I am not the author. I just coppied the readme to my own repository so as to check the rules more easily.
 
 This Refactoring Kata was designed by Jon Jagger and is available in his Cyber-Dojo. See [his blog post](http://jonjagger.blogspot.co.uk/2012/05/yahtzee-cyber-dojo-refactoring-in-java.html)
 
