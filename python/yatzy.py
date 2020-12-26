@@ -27,26 +27,16 @@ class Yatzy:
         return points_total
 
     def __init__(self, dice_list, number):
-        assert len(dice_list )== 5
-        assert max(dice_list) <= 6
-        assert min(dice_list) >= 1
+        assert len(self.dice_list )== 5
+        assert max(self.dice_list) <= 6
+        assert min(self.dice_list) >= 1
 
         self.count = dice_list.count(number)
         self.points_total = self.count * number
 
-    @staticmethod
-    def ones(dice_list):
-        assert len(dice_list )== 5
-        assert max(dice_list) <= 6
-        assert min(dice_list) >= 1
-
-
-        ones_count = 0
-        for dice in dice_list:
-            if dice == 1:
-                ones_count += 1
-        points_total = ones_count
-        return points_total
+    
+    def ones(self, number = 1):
+        return self.points_total
     
 
     @staticmethod
@@ -56,11 +46,7 @@ class Yatzy:
         assert min(dice_list) >= 1
 
 
-        twos_count = 0
-        for dice in dice_list:
-            if dice == 2:
-                twos_count += 1
-        points_total = twos_count * 2
+    count = 
         return points_total
     
     @staticmethod
