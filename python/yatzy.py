@@ -6,7 +6,7 @@ class Yatzy:
 
     @staticmethod
     def chance(*dice):
-        assert len(dice )== 5
+        assert len(dice)== 5
         assert max(dice) <= 6
         assert min(dice) >= 1
 
@@ -20,8 +20,8 @@ class Yatzy:
         assert len(dice)== 5
         assert max(dice) <= 6
         assert min(dice) >= 1
-
-        if dice.count(dice[0]) == len(dice):
+        HOW_MANY_DICE = 5
+        if dice.count(dice[0]) == HOW_MANY_DICE:
 # esto chequea que todos los elementos de la lista sean como el primero, tmb puedo cambiarlo por ==5 y quizá se lee mejor
             points_total = 50
         else: 
@@ -34,8 +34,9 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
+        ONE = 1
 
-        points_total = dice.count(1)
+        points_total = dice.count(1) * ONE
         return points_total
     
 
@@ -44,8 +45,8 @@ class Yatzy:
         assert len(dice)== 5
         assert max(dice) <= 6
         assert min(dice) >= 1
-
-        points_total = dice.count(2) * 2
+        TWO = 2
+        points_total = dice.count(2) * TWO
         return points_total
     
     
@@ -55,8 +56,9 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
-        
-        points_total = dice.count(3) * 3
+        THREE = 3
+
+        points_total = dice.count(3) * THREE
         return points_total
     
     
@@ -68,7 +70,9 @@ class Yatzy:
         assert max(self.dice) <= 6
         assert min(self.dice) >= 1
 
-        points_total = self.dice.count(4) * 4
+        FOUR = 4
+
+        points_total = self.dice.count(4) * FOUR
         return points_total
 
     
@@ -78,7 +82,9 @@ class Yatzy:
         assert max(self.dice) <= 6
         assert min(self.dice) >= 1
 
-        points_total = self.dice.count(5) * 5
+        FIVE = 5
+
+        points_total = self.dice.count(5) * FIVE
 
         return points_total
     
@@ -88,7 +94,9 @@ class Yatzy:
         assert max(self.dice) <= 6
         assert min(self.dice) >= 1
 
-        points_total = self.dice.count(6) * 6
+        SIX = 6
+
+        points_total = self.dice.count(6) * SIX
 
         return points_total
 
@@ -99,14 +107,14 @@ class Yatzy:
         assert len(dice)== 5
         assert max(dice) <= 6
         assert min(dice) >= 1
-
+        PAIR = 2
         repeated_lst = [0] 
 #El acumulador parte con un 0 en lugar de estar vacío porque de esta manera si no hay parejas la puntuación será 0
         for number in dice:
             if dice.count(number) >= 2:
                 repeated_lst.append(number)
 
-        points_total = max(repeated_lst) * 2
+        points_total = max(repeated_lst) * PAIR
         return points_total
                 
     
@@ -116,6 +124,7 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
+        PAIR = 2
         repeated_lst = [] 
 #aquí no pongo 0 porque si no me cargo la puntuación, si no el 0 sería el min 
         for number in dice:
@@ -123,7 +132,7 @@ class Yatzy:
                 repeated_lst.append(number)
 
         if len(repeated_lst) >= 4:
-            points_total = min(repeated_lst) * 2 + max(repeated_lst) * 2 
+            points_total = min(repeated_lst) * PAIR + max(repeated_lst) * PAIR
 ###Nota importante por si vuelvo a revisar el código: seguramente te sientes tentada a querer hacer un sum de la repeated list en vez de esto pero date cuenta de que tal y como montaste el algoritmo si hay un trio se añadirán 3 (de ahí que en el if hayas puesto >= 4 en vez de ==4) a la repeated list, de todos modos, mejor si puedes revisar el algoritmo y mejorarlo
         else:
             points_total = 0
@@ -136,11 +145,12 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
-        points_total = 0 
+        points_total = 0
+        THREE = 3
 #en vez de la lista, aquí ya me aseguro que si no hay trío la puntuación no cambiará y se quedará en 0
         for number in dice:
             if dice.count(number) >= 3:
-                points_total = number * 3
+                points_total = number * THREE
                 break #break para que no siga rodando repitiendo números
 #aquí no haría falta hacer un acumulador y un if independiente poque solo puede haner un trío
 
@@ -152,10 +162,12 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
+        FOUR = 4
+
         points_total = 0 
         for number in dice:
             if dice.count(number) >= 4:
-                points_total = number * 4 
+                points_total = number * FOUR 
                 break 
 #esto es calcado al de los tríos
 
@@ -170,8 +182,8 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
-        is_small_straight = sorted(dice) == [1,2,3,4,5]
-        if is_small_straight == True:
+
+        if sorted(dice) == [1,2,3,4,5]:
             points_total = 15  #sumatorio de los números de la lista (dados)
         else:
             points_total = 0
@@ -186,8 +198,7 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
-        is_large_straight = sorted(dice) == [2,3,4,5,6] 
-        if is_large_straight == True:
+        if sorted(dice) == [2,3,4,5,6]:
             points_total = 20 #sumatorio de los números de la lista (dados)
         else:
             points_total = 0
@@ -202,20 +213,20 @@ class Yatzy:
         assert max(dice) <= 6
         assert min(dice) >= 1
 
-        pair = False
-        three = False
+        there_is_pair = False
+        there_is_three = False
 
         for number in dice:
             if dice.count(number) == 2:
-                pair = True
+                there_is_pair = True
             elif dice.count(number) == 3:
-                three = True
+                there_is_three = True
 
 
             elif dice.count(number) != 2 and dice.count(number) != 3:
                 points_total = 0
                 break
-            if three == True and pair== True:
+            if there_is_three == True and there_is_pair== True:
                 points_total = sum(dice)
                 break
         return points_total
