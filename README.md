@@ -4,7 +4,7 @@
 
 - ❌ It DOES NOT aim to evaluate which is the highest scoring category. 
 - ❌ It DOES NOT aim to program the random dice rolling.
-- ✔️ It calculates the score of a GIVEN roll in a given category.
+- ✔️ It aims to calculate the score of a GIVEN roll in a given category.
  ## What is Yatzy?
  Yatzy is a dice game in which 5 dice are rolled in every roll. Then the score can be calculated in different ways depending on the category. The whole rules of the Yatzy game are better explained in this [emilybache's repository](https://github.com/emilybache/Yatzy-Refactoring-Kata).
 
